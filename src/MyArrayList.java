@@ -60,4 +60,30 @@ public class MyArrayList<T> implements MyList<T>
         list[index] = item;
     }
 
+    @Override
+    public boolean remove(T item) {
+        for(int i = 0; i < size;i++){
+            if(item == list[i])
+            {
+                remove(i);
+                return  true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public T remove(int index) {
+        if(index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        T data = (T)list[index];
+        for(int i = index; i < size-1;i++)
+        {
+            list[i] = list[i+1];
+        }
+        size--;
+    }
+
+
 }
