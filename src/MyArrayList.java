@@ -29,4 +29,25 @@ public class MyArrayList<T> implements MyList<T>
         }
         return false;
     }
+
+    @Override
+    public void add(T item)
+    {
+        if(size >= list.length)
+        {
+            increaseCapacity();
+        }
+        list[size] = item;
+        size++;
+    }
+
+    private void increaseCapacity()
+    {
+        Object[] newList = new Object[list.length * 2];
+        for(int i = 0;i < newList.length;i++){
+            newList[i] = list[i];
+        }
+        list = newList;
+    }
+
 }
