@@ -50,4 +50,14 @@ public class MyArrayList<T> implements MyList<T>
         list = newList;
     }
 
+
+    @Override
+    public void add(T item, int index) {
+        if(index >= size)
+        {
+            return;
+        }
+        list[index] = item;
+    }
+
 }
