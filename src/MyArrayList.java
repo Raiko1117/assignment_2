@@ -13,4 +13,8 @@ public class MyArrayList<T> implements MyList<T>
         list = new Object[capacity];
     }
 
+    @Override
+    public int size() {
+        return size;
+    }
 }
