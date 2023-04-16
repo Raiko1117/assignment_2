@@ -85,5 +85,12 @@ public class MyArrayList<T> implements MyList<T>
         size--;
     }
 
+    @Override
+    public void clear() {
+        list = new Object[5];
+        size = 0;
+    }
+
+
 
 }
