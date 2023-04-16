@@ -31,5 +31,36 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         return false;
     }
+    @Override
+    public void add(T item) {
+        Node<T> node = new Node<>(item);
+        if (size == 0) {
+            head = node;
+            tail = node;
+        } else {
+            tail.next = node;
+            node.prev = tail;
+            tail = node;
+        }
+        size++;
+    }
+    @Override
+    public void add(T item, int index) {
+        if (index > size) {
+            return;
+        }
+        Node<T> node = new Node<>(item);
+        if (index == 0) {
+            node.next = head;
+            head.prev = node;
+            head = node;
+        } else if (index == size) {
+            tail.next = node;
+            node.prev = tail;
+            tail = node;
+        } else {
+            Node<T> current = head;
+        }
+    }
 
 }
