@@ -1,6 +1,6 @@
 import org.w3c.dom.Node;
 
-public class MyLinkedList<T> implements MyList<T> {
+public abstract class MyLinkedList<T> implements MyList<T> {
     private Node<T> head;
     private Node<T> tail;
     private int size;

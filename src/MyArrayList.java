@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class MyArrayList<T> implements MyList<T>
 {
     private Object[] list;
@@ -77,12 +79,13 @@ public class MyArrayList<T> implements MyList<T>
         if(index >= size){
             throw new IndexOutOfBoundsException();
         }
-        T data = (T)list[index];
+        Object data = list[index];
         for(int i = index; i < size-1;i++)
         {
             list[i] = list[i+1];
         }
         size--;
+        return (T) data;
     }
 
     @Override
@@ -99,6 +102,47 @@ public class MyArrayList<T> implements MyList<T>
         return (T) list[index];
     }
 
+    @Override
+    public int indexOf(Object o){
+    for(int i = 0; i < size; i++){
+        if(o == list[i]){
+            return i;
+        }
+    }
+    return -1;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        for (int i = size - 1; i >= 0; i--){
+            if(o == list[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public void sort() {
+        for(int i = 0; i < size-i;i++){
+            for(int j = 0; j < size-1-i; j++){
+                if ( (Integer) list[j] > (Integer) list[j+1])
+                {
+                    swapNext(j);
+                }
+            }
+
+
+        }
+
+    }
+
+    private void swapNext(int i)
+    {
+        Object temp = list[i];
+        list[i] = list[i + 1];
+        list[i + 1] = temp;
+    }
 
 
 }
