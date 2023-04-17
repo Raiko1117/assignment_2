@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public abstract class MyLinkedList<T> implements MyList<T> {
     private Node<T> head;
     private Node<T> tail;

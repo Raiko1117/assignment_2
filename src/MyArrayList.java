@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class MyArrayList<T> implements MyList<T>
 {
     private Object[] list;
@@ -131,10 +129,7 @@ public class MyArrayList<T> implements MyList<T>
                     swapNext(j);
                 }
             }
-
-
         }
-
     }
 
     private void swapNext(int i)
@@ -143,6 +138,4 @@ public class MyArrayList<T> implements MyList<T>
         list[i] = list[i + 1];
         list[i + 1] = temp;
     }
-
-
 }
